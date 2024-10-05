@@ -1,0 +1,25 @@
+<!-- Interpolation -->
+<h3>the addition of 4 + 3 = {{4+3}}</h3><br><br>
+
+<div class="container">
+    <h2 class="text-center">Mouse Events Handle As A Function</h2>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col col-lg-3 col-md-3 col-sm-6"><button class="btn btn-success" (click)="msg()">On Click</button></div>
+        <div class="col col-lg-3 col-md-3 col-sm-6"><button class="btn btn-info" (dblclick)="dc()">Double Click</button></div>
+        <div class="col col-lg-3 col-md-3 col-sm-6"><button class="btn btn-danger" (mouseover)="mo()">Mouse Over</button></div>
+        <div class="col col-lg-3 col-md-3 col-sm-6"><button class="btn btn-warning" (mouseleave)="ml()">Mouse Leave</button></div>
+    </div>
+</div>
+<div class="container mt-5">
+    <h2 class="text-center">Parameterize Functions</h2>
+</div>
+<div class="container p-2">
+    <div class="row">
+        <div class="col col-lg-3 col-md-3 col-sm-6"><button class="btn btn-danger" (click)="add(4,6)">Add</button></div>
+        <div class="col col-lg-3 col-md-3 col-sm-6"><button class="btn btn-info" (click)="sub(6,4)">Subtract</button></div>
+        <div class="col col-lg-3 col-md-3 col-sm-6"><button class="btn btn-warning" (click)="mult(10,5)">Multiplication</button></div>
+        <div class="col col-lg-3 col-md-3 col-sm-6"><button class="btn btn-success" (click)="div(50,5)">Divide</button></div>
+    </div>
+</div>
