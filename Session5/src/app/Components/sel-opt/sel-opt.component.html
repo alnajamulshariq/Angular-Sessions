@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>PLEASE SELECT YOUR SKILL</h1>
+</div>
+
+<div class="container">
+    <select (change)="chFunc($event)">
+        <option>Please Select Your Skill</option>
+        <option value="Html">HTML</option>
+        <option value="Css">CSS</option>
+        <option value="JavaScript">JAVASCRIPT</option>
+        <option value="Php">PHP</option>
+        <option value="Laravel">LARAVEL</option>
+    </select>
+    @if(selVal){
+        <h3>Your Skill Is : {{selVal}}</h3>
+    }
+</div>

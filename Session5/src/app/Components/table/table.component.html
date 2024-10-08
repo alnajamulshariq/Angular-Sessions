@@ -1,0 +1,34 @@
+<div class="container">
+    <h1 class="text-center">DETAILS OF EMPLOYEES</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md2"></div>
+        <div class="col-md-8">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">NAME</th>
+                    <th scope="col">AGE</th>
+                    <th scope="col">DESIGNATION</th>
+                    <th scope="col">SALARY</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (item of Emp; track item) 
+                  {
+                    <tr>
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.age}}</td>
+                        <td>{{item.desig}}</td>
+                        <td>{{item.salary}}</td>
+                      </tr>
+                  }
+                </tbody>
+              </table>
+        </div>
+        <div class="col-md2"></div>
+    </div>
+</div>
