@@ -1,0 +1,47 @@
+<!-- UpperCase through Pipe  -->
+<h3>{{ "shariq najam" | uppercase }}</h3>
+
+<!-- LowerCase through Pipe  -->
+<h3>{{ "SHARIQ NAJAM" | lowercase }}</h3>
+
+<!-- TitleCase through Pipe  -->
+<h3>{{ "shariq najam" | titlecase }}</h3>
+
+<!-- here we use Date() function to show full date  -->
+<h3>{{ today }}</h3>
+
+<!-- show only date through Pipe  -->
+<h3>{{ today | date }}</h3>
+
+<!-- show hour, minutes and second through Pipe -->
+<h3>{{ today | date : "hh:mm:ss" }}</h3>
+
+<!-- show full date through Pipe -->
+<h3>{{ today | date : "fullDate" }}</h3>
+
+<!-- show short date through Pipe -->
+<h3>{{ today | date : "shortDate" }}</h3>
+
+<!-- show Month, Date , Year Format through Pipe -->
+<h3>{{ today | date : "MM:dd:yyyy" }}</h3>
+
+<!-- show Year , Month , Date Format through Pipe -->
+<h3>{{today | date:'yyyy:MM:dd'}}</h3>
+
+<!-- using default currency Pipe -->
+<h3>{{2000 | currency}}</h3>
+
+<!-- using Pakistani Currency through Pipe -->
+<h3>{{2000 | currency:'PKR'}}</h3>
+
+<!-- using Indian Currency through Pipe -->
+<h3>{{2000 | currency:'INR'}}</h3>
+
+<!-- using Slice through Pipe -->
+<h3>{{[1,2,3,4,5,6] | slice:2}}</h3>
+
+<!-- using Slice to the ratio 1:3 through Pipe -->
+<h3>{{[1,2,3,4,5,6] | slice:1:3}}</h3>
+
+<!-- converting object into JSON through Pipe -->
+<h3>{{Employees | json}}</h3>
