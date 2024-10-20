@@ -1,0 +1,180 @@
+<div class="container mb-4">
+    <h1 class="text-center">Employee Form</h1>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+
+            <form class="row g-3" [formGroup]="empForm" (ngSubmit)="onSave(empForm.value)">
+
+                <div class="col-md-4">
+                  <label for="validationCustom01" class="form-label">First name</label>
+                  <input type="text" class="form-control" id="validationCustom01" formControlName="firstName" value="">
+                  <div class="text-danger">
+                    @if(empForm.controls['firstName'].touched && empForm.controls['firstName'].errors?.['required'])
+                    {
+                        <span>First Name required</span>
+                    }
+                    @else if (empForm.controls['firstName'].touched && empForm.controls['firstName'].errors?.['minlength']) 
+                    {
+                        <span>Min Characters 3 required</span>
+                    }
+                    
+                  </div>
+                  
+                </div>
+                <div class="col-md-4">
+                  <label for="validationCustom02" class="form-label">Last name</label>
+                  <input type="text" class="form-control" id="validationCustom02" formControlName="lastName" value="">
+                  <div class="text-danger">
+                    @if(empForm.controls['lastName'].touched && empForm.controls['lastName'].errors?.['required'])
+                    {
+                        <span>Last Name required</span>
+                    }
+                    @else if (empForm.controls['lastName'].touched && empForm.controls['lastName'].errors?.['minlength']) 
+                    {
+                        <span>Min Characters 3 required</span>
+                    }
+                    
+                  </div>
+                </div>
+            
+                <div class="col-md-4">
+                  <label for="validationCustomUsername" class="form-label">Email</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend">&#64;</span>
+                    <input type="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" formControlName="email">
+                    
+                  </div>
+                  <div class="text-danger">
+                    @if(empForm.controls['email'].touched && empForm.controls['email'].errors?.['email'])
+                    {
+                        <span>Email is required</span>
+                    }
+                    @else if (empForm.controls['email'].touched && empForm.controls['email'].errors?.['minlength']) 
+                    {
+                        <span>Min Characters 11 required</span>
+                    }
+                    
+                  </div>
+                </div>
+            
+                <div class="col-md-6">
+                  <label for="validationCustom03" class="form-label">City</label>
+                  <input type="text" class="form-control" id="validationCustom03" formControlName="city">
+                  <div class="text-danger">
+                    @if(empForm.controls['city'].touched && empForm.controls['city'].errors?.['required'])
+                    {
+                        <span>City Name required</span>
+                    }
+                    @else if (empForm.controls['city'].touched && empForm.controls['city'].errors?.['minlength']) 
+                    {
+                        <span>Min Characters 3 required</span>
+                    }
+                    
+                  </div>
+                  
+                </div>
+            
+                <div class="col-md-3">
+                  <label for="validationCustom04" class="form-label">Province</label>
+                  <select class="form-select" id="validationCustom04" formControlName="province">
+                    <option selected disabled value="">Choose...</option>
+                    <option>Sindh</option>
+                    <option>Punjab</option>
+                    <option>Balochistan</option>
+                    <option>KPK</option>
+                    <option>Gilgit Baltistan</option>
+                  </select>
+                  <div class="text-danger">
+                    @if(empForm.controls['province'].touched && empForm.controls['province'].errors?.['required'])
+                    {
+                        <span>Province Name required</span>
+                    }
+                    
+                  </div>
+                  
+                </div>
+            
+                <div class="col-md-3">
+                  <label for="validationCustom05" class="form-label">Zip</label>
+                  <input type="number" class="form-control" id="validationCustom05" formControlName="zipCode">
+                  <div class="text-danger">
+                    @if(empForm.controls['zipCode'].touched && empForm.controls['zipCode'].errors?.['required'])
+                    {
+                        <span>Zip Code required</span>
+                    }
+                    @else if (empForm.controls['zipCode'].touched && empForm.controls['zipCode'].errors?.['minlength']) 
+                    {
+                        <span>Min Characters 3 required</span>
+                    }
+                    
+                  </div>
+                </div>
+            
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" formControlName="isAcceptTerms" required>
+                    <label class="form-check-label" for="invalidCheck">
+                      Agree to terms and conditions
+                    </label>
+                    <div class="text-danger">
+                        @if(empForm.controls['isAcceptTerms'].touched && empForm.controls['isAcceptTerms'].errors?.['required'])
+                        {
+                            <span>Accept Terms required</span>
+                        }
+                        
+                      </div>
+                    
+                  </div>
+                </div>
+            
+                <div class="col-12">
+                    <button class="btn btn-primary" (click)="resetForm()">Reset Form</button>
+                  <button class="btn btn-success" style="margin-left: 10px;" type="submit" [disabled]="empForm.invalid">Submit Form</button>
+                </div>
+              </form>
+
+        </div>
+
+        <div class="col-md-2">
+            
+        </div>
+    </div>
+    <div class="row">
+        <h1 class="text-center" style="font-family: 'Times New Roman', Times, serif;">Fetching Data Through Reactive Employee Form</h1>
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+
+            <table class="table border border-info table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Province</th>
+                    <th scope="col">Zip Code</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let emp of formValue">
+                    <td>{{emp.firstName}}</td>
+                    <td>{{emp.lastName}}</td>
+                    <td>{{emp.email}}</td>
+                    <td>{{emp.city}}</td>
+                    <td>{{emp.province}}</td>
+                    <td>{{emp.zipCode}}</td>
+                  </tr>
+                </tbody>
+              </table>
+
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+</div>
