@@ -1,0 +1,9 @@
+<div class="container">
+  <h1 class="text-center">Sending Data From Child To Parent</h1>
+</div>
+
+<h2>{{msg}}</h2>
+
+
+<app-child (ChildEvent)="msg=$event"></app-child>
+<router-outlet />
