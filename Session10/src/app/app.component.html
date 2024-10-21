@@ -1,0 +1,16 @@
+<h1 style="text-align: center; font-family: 'Times New Roman', Times, serif;">Send Data From Parent To Child Component</h1>
+
+<!-- Send Single Data From Parent To Child Component  -->
+<app-child-component [myName]="name"></app-child-component>
+
+<!-- Change data from Parent to Child Component  -->
+<button class="btn btn-success" (click)="chData()">Change Data</button>
+
+<!-- send an array from parent to child  -->
+<app-child-component [myArray]="classFellows"></app-child-component>
+
+<!-- send an object from parent to child  -->
+ <app-child-component [myObj]="student"></app-child-component>
+
+
+<router-outlet />
